@@ -1,5 +1,12 @@
 import React from 'react';
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 
+import Home from './components/Home';
+import Nav from './components/Nav'
+
+/*
+All components will be routed in this directory
+*/
 class App extends React.Component {
   constructor() {
     super()
@@ -7,10 +14,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>React work flow has been setup</h1>
-        <p>This app will be a portfolio that will repalce chrislindor.com</p>
-      </div>
+      <Router history={hashHistory}>
+        <Route path="/" component={Nav}>
+          <IndexRoute component={Home}></IndexRoute>
+        </Route>
+      </Router>
     )
   }
 }
