@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router'
 
-let bars = <i className="fa fa-bars" aria-hidden="true"></i>;
-let closeIcon = <i className="fa fa-times" aria-hidden="true"></i>;
+let Bars = <i className="fa fa-bars" aria-hidden="true"></i>;
+let CloseIcon = <i className="fa fa-times" aria-hidden="true"></i>;
 
 const Fa = (props) => {
   return <i className={props.icon} aria-hidden="true"></i>
@@ -13,19 +13,19 @@ class Nav extends React.Component {
     super(props)
     this.navClick = this.navClick.bind(this)
     this.state = {
-      buttonStyle: bars,
+      buttonStyle: Bars,
       navVis: "nav-hidden"
     }
   }
   navClick(){
-    if (this.state.buttonStyle === bars ) {
+    if (this.state.buttonStyle === Bars ) {
       this.setState({
-        buttonStyle: closeIcon,
+        buttonStyle: CloseIcon,
         // navVis:
       })
     } else {
       this.setState({
-        buttonStyle: bars,
+        buttonStyle: Bars,
         // navVis: " "
       })
     }
@@ -44,13 +44,13 @@ class Nav extends React.Component {
             </button>
             <ul className="nav-links">
               <li>
-                <Link to="/">Design</Link>
+                <Link to="/work">Design</Link>
               </li>
               <li>
-                <Link to="/">Development</Link>
+                <Link to="/work">Development</Link>
               </li>
               <li>
-                <Link to="/">Photography</Link>
+                <Link to="/photo">Photography</Link>
               </li>
             </ul>
             <section className="social-section">

@@ -2,7 +2,9 @@ import React from 'react';
 import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 
 import Home from './components/Home';
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+import Work from './components/Work';
+import Photo from './components/Photo.js';
 
 /*
 All components will be routed in this directory
@@ -17,6 +19,8 @@ class App extends React.Component {
       <Router history={hashHistory}>
         <Route path="/" component={Nav}>
           <IndexRoute component={Home}></IndexRoute>
+          <Route path="work" component={Work}></Route>
+          <Route path="photo" component={Photo}></Route>
         </Route>
       </Router>
     )
