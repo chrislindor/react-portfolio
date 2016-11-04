@@ -14,19 +14,19 @@ class Nav extends React.Component {
     this.navClick = this.navClick.bind(this)
     this.state = {
       buttonStyle: Bars,
-      navVis: "nav-hidden"
+      navVis: "nav-links nav-hidden"
     }
   }
   navClick(){
     if (this.state.buttonStyle === Bars ) {
       this.setState({
         buttonStyle: CloseIcon,
-        // navVis:
+        navVis: "nav-links"
       })
     } else {
       this.setState({
         buttonStyle: Bars,
-        // navVis: " "
+        navVis: "nav-links nav-hidden"
       })
     }
   }
@@ -38,11 +38,12 @@ class Nav extends React.Component {
           <section className="logo">
             <Link to="/">Christopher Lindor</Link>
           </section>
-          <nav>
-            <button className="nav-controller" onClick={this.navClick}>
-              {this.state.buttonStyle}
-            </button>
-            <ul className="nav-links">
+          <button className="nav-controller" onClick={this.navClick}>
+            {this.state.buttonStyle}
+          </button>
+          <nav className={this.state.navVis}>
+
+            <ul>
               <li>
                 <Link to="/work">Design</Link>
               </li>
