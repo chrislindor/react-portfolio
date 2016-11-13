@@ -4,12 +4,34 @@ import portData from './portData';
 
 // Work component
 
+// function to filter array and return array of data based on supplied category argument.
+let filterData = (array, filter) => {
+  let newArray = [];
+  for (let i =0; i < array.length; i++){
+    if (array[i].category === filter) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray
+}
+
+// Setting up data sets for filter to be passed as states
+const designData = filterData(portData, "Design");
+const devData = filterData(portData, "Development");
+
 class Work extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       projects: portData,
-    }
+    },
+    this.updateFilter = this.updateFilter.bind(this)
+  }
+
+  updateFilter(filter) {
+    this.setState({
+      projects: filter
+    })
   }
 
   render() {
@@ -26,15 +48,14 @@ class Work extends React.Component {
         </li>
       )
     })
-
     return (
       <div>
         <section className="work-head">
           <h1>Work</h1>
           <ul className="work-nav">
-            <li>All</li>
-            <li>Design</li>
-            <li>Development</li>
+            <li><button onClick={() => this.updateFilter(portData)}>All</button></li>
+            <li><button onClick={() => this.updateFilter(designData)}>Design</button></li>
+            <li><button onClick={() => this.updateFilter(devData)}>Development</button></li>
           </ul>
         </section>
         <section className="project-display">
