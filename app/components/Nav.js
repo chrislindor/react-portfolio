@@ -60,16 +60,19 @@ class Nav extends React.Component {
               <li>
                 <Link to="/photo" onClick={this.navClick}>Photography</Link>
               </li>
-            </ul>
-            <section className="social-section">
-              <a href="#"><Fa icon="fa fa-instagram social-button" /></a>
-              <a href="#"><Fa icon="fa fa-github social-button" /></a>
-              <a href="#"><Fa icon="fa fa-linkedin social-button" /></a>
-              <section className="email">
-                  <a href="#">chrislindor@gmail.com</a>
-              </section>
+              <li>
+                <section className="social-section">
+                  <a href="#"><Fa icon="fa fa-instagram social-button" /></a>
+                  <a href="#"><Fa icon="fa fa-github social-button" /></a>
+                  <a href="#"><Fa icon="fa fa-linkedin social-button" /></a>
+                  <section className="email">
+                      <a href="#">chrislindor@gmail.com</a>
+                  </section>
 
-            </section>
+                </section>
+              </li>
+            </ul>
+
         </nav>
 
         {this.props.children}

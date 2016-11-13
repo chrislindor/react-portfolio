@@ -63,12 +63,12 @@ header button {
   }
 
 .social-section{
+  padding: 70px 0 0 0;
   /*display: flex;*/
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   /*justify-content: flex-end;*/
   /*font-size: 25px;*/
   text-align: right;
-  width: 100vw;
 }
 
 .social-button {
