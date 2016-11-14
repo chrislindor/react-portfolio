@@ -11,6 +11,7 @@ class portItem extends React.Component {
     // }
   }
 
+  // Match portfolio data with supplied link param
   getPortItem(data) {
     let currentPortItem = "";
     for (let i = 0; i < data.length; i++) {

@@ -19,6 +19,7 @@ let filterData = (array, filter) => {
 const designData = filterData(portData, "Design");
 const devData = filterData(portData, "Development");
 
+// Work class begins
 class Work extends React.Component {
   constructor(props) {
     super(props)
@@ -35,14 +36,14 @@ class Work extends React.Component {
   }
 
   render() {
-    let projects = this.state.projects.map((project) => {
+    let projects = this.state.projects.map((data,index) => {
       return(
-        <li className="projects" key={project.key}>
+        <li className="projects" key={index}>
           <figure>
-            <Link to={`work/${project.tittle}`}><img src={project.thumbImg} alt=""/></Link>
+            <Link to={`work/${data.tittle}`}><img src={data.thumbImg} alt=""/></Link>
             <figcaption>
-              <h2> <Link to={`work/${project.tittle}`}>{project.tittle}</Link> </h2>
-              <h3>{project.category}</h3>
+              <h2> <Link to={`work/${data.tittle}`}>{data.tittle}</Link> </h2>
+              <h3>{data.category}</h3>
             </figcaption>
           </figure>
         </li>

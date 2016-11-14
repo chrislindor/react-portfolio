@@ -17,7 +17,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router history={hashHistory}>
+      <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
         <Route path="/" component={Nav}>
           <IndexRoute component={Home}></IndexRoute>
           <Route path="work" component={Work}></Route>
