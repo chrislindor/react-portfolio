@@ -6,7 +6,7 @@ let Bars = <i className="fa fa-bars" aria-hidden="true"></i>;
 let CloseIcon = <i className="fa fa-times" aria-hidden="true"></i>;
 
 const Fa = (props) => {
-  return <i className={props.icon} aria-hidden="true"></i>
+  return <i className={`fa ${props.iconClass}`} aria-hidden="true"></i>
 };
 
 class Nav extends React.Component {
@@ -43,7 +43,7 @@ class Nav extends React.Component {
       <div className="site-root">
         <header>
           <section className={this.state.logoStyle}>
-            <Link to="/" >Christopher Lindor</Link>
+            <Link to="/">Christopher Lindor</Link>
           </section>
           <button className={this.state.buttonColor} onClick={this.navClick}>
             {this.state.buttonStyle}
@@ -62,9 +62,9 @@ class Nav extends React.Component {
               </li>
               <li>
                 <section className="social-section">
-                  <a href="#"><Fa icon="fa fa-instagram social-button" /></a>
-                  <a href="#"><Fa icon="fa fa-github social-button" /></a>
-                  <a href="#"><Fa icon="fa fa-linkedin social-button" /></a>
+                  <a href="#"><Fa iconClass="fa-instagram social-button" /></a>
+                  <a href="#"><Fa iconClass="fa-github social-button" /></a>
+                  <a href="#"><Fa iconClass="fa-linkedin social-button" /></a>
                   <section className="email">
                       <a href="#">chrislindor@gmail.com</a>
                   </section>

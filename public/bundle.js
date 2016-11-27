@@ -21459,9 +21459,13 @@
 
 	var _Work2 = _interopRequireDefault(_Work);
 
-	var _Photo = __webpack_require__(231);
+	var _Photo = __webpack_require__(232);
 
 	var _Photo2 = _interopRequireDefault(_Photo);
+
+	var _portItem = __webpack_require__(234);
+
+	var _portItem2 = _interopRequireDefault(_portItem);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21488,12 +21492,15 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        _reactRouter.Router,
-	        { history: _reactRouter.hashHistory },
+	        { onUpdate: function onUpdate() {
+	            return window.scrollTo(0, 0);
+	          }, history: _reactRouter.hashHistory },
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: '/', component: _Nav2.default },
 	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'work', component: _Work2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: 'work/:portItemName', component: _portItem2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'photo', component: _Photo2.default })
 	        )
 	      );
@@ -26414,7 +26421,7 @@
 /* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26446,15 +26453,38 @@
 	  }
 
 	  _createClass(Home, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Home Page'
+	          "section",
+	          { className: "home-display" },
+	          _react2.default.createElement(
+	            "section",
+	            { className: "home-design home-inner" },
+	            "CL.design"
+	          ),
+	          _react2.default.createElement(
+	            "section",
+	            { className: "home-dev home-inner" },
+	            "CL.dev();"
+	          ),
+	          _react2.default.createElement(
+	            "section",
+	            { className: "home-photo home-inner" },
+	            "CL.photos"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "section",
+	          { className: "about" },
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "About section"
+	          )
 	        )
 	      );
 	    }
@@ -26492,6 +26522,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Bars = _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' });
+
 	var CloseIcon = _react2.default.createElement('i', { className: 'fa fa-times', 'aria-hidden': 'true' });
 
 	var Fa = function Fa(props) {
@@ -26509,7 +26540,9 @@
 	    _this.navClick = _this.navClick.bind(_this);
 	    _this.state = {
 	      buttonStyle: Bars,
-	      navVis: "nav-hidden"
+	      navVis: "nav-links nav-hidden",
+	      logoStyle: "logo",
+	      buttonColor: "nav-open"
 	    };
 	    return _this;
 	  }
@@ -26519,11 +26552,17 @@
 	    value: function navClick() {
 	      if (this.state.buttonStyle === Bars) {
 	        this.setState({
-	          buttonStyle: CloseIcon
+	          buttonStyle: CloseIcon,
+	          navVis: "nav-links light-style",
+	          logoStyle: "logo light-style",
+	          buttonColor: "nav-open light-style"
 	        });
 	      } else {
 	        this.setState({
-	          buttonStyle: Bars
+	          buttonStyle: Bars,
+	          navVis: "nav-links nav-hidden",
+	          logoStyle: "logo",
+	          buttonColor: "nav-open"
 	        });
 	      }
 	    }
@@ -26538,7 +26577,7 @@
 	          null,
 	          _react2.default.createElement(
 	            'section',
-	            { className: 'logo' },
+	            { className: this.state.logoStyle },
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { to: '/' },
@@ -26546,61 +26585,74 @@
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'nav',
+	            'button',
+	            { className: this.state.buttonColor, onClick: this.navClick },
+	            this.state.buttonStyle
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'nav',
+	          { className: this.state.navVis },
+	          _react2.default.createElement(
+	            'ul',
 	            null,
 	            _react2.default.createElement(
-	              'button',
-	              { className: 'nav-controller', onClick: this.navClick },
-	              this.state.buttonStyle
-	            ),
-	            _react2.default.createElement(
-	              'ul',
-	              { className: 'nav-links' },
+	              'li',
+	              null,
 	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/work' },
-	                  'Design'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/work' },
-	                  'Development'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/photo' },
-	                  'Photography'
-	                )
+	                _reactRouter.Link,
+	                { to: '/work', onClick: this.navClick },
+	                'Design'
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'section',
-	              { className: 'social-section' },
+	              'li',
+	              null,
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#' },
-	                _react2.default.createElement(Fa, { icon: 'fa fa-instagram' })
-	              ),
+	                _reactRouter.Link,
+	                { to: '/work', onClick: this.navClick },
+	                'Development'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#' },
-	                _react2.default.createElement(Fa, { icon: 'fa fa-github' })
-	              ),
+	                _reactRouter.Link,
+	                { to: '/photo', onClick: this.navClick },
+	                'Photography'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#' },
-	                _react2.default.createElement(Fa, { icon: 'fa fa-linkedin' })
+	                'section',
+	                { className: 'social-section' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#' },
+	                  _react2.default.createElement(Fa, { icon: 'fa fa-instagram social-button' })
+	                ),
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#' },
+	                  _react2.default.createElement(Fa, { icon: 'fa fa-github social-button' })
+	                ),
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#' },
+	                  _react2.default.createElement(Fa, { icon: 'fa fa-linkedin social-button' })
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  { className: 'email' },
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#' },
+	                    'chrislindor@gmail.com'
+	                  )
+	                )
 	              )
 	            )
 	          )
@@ -26631,6 +26683,12 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(173);
+
+	var _portData = __webpack_require__(231);
+
+	var _portData2 = _interopRequireDefault(_portData);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26641,25 +26699,141 @@
 
 	// Work component
 
+	// function to filter array and return array of data based on supplied category argument.
+	var filterData = function filterData(array, filter) {
+	  var newArray = [];
+	  for (var i = 0; i < array.length; i++) {
+	    if (array[i].category === filter) {
+	      newArray.push(array[i]);
+	    }
+	  }
+	  return newArray;
+	};
+
+	// Setting up data sets for filter to be passed as states
+	var designData = filterData(_portData2.default, "Design");
+	var devData = filterData(_portData2.default, "Development");
+
+	// Work class begins
+
 	var Work = function (_React$Component) {
 	  _inherits(Work, _React$Component);
 
 	  function Work(props) {
 	    _classCallCheck(this, Work);
 
-	    return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).call(this, props));
+
+	    _this.state = {
+	      projects: _portData2.default
+	    }, _this.updateFilter = _this.updateFilter.bind(_this);
+	    return _this;
 	  }
 
 	  _createClass(Work, [{
+	    key: 'updateFilter',
+	    value: function updateFilter(filter) {
+	      this.setState({
+	        projects: filter
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
+	      var projects = this.state.projects.map(function (data, index) {
+	        return _react2.default.createElement(
+	          'li',
+	          { className: 'projects', key: index },
+	          _react2.default.createElement(
+	            'figure',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: 'work/' + data.tittle },
+	              _react2.default.createElement('img', { src: data.thumbImg, alt: '' })
+	            ),
+	            _react2.default.createElement(
+	              'figcaption',
+	              null,
+	              _react2.default.createElement(
+	                'h2',
+	                null,
+	                ' ',
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: 'work/' + data.tittle },
+	                  data.tittle
+	                ),
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                data.category
+	              )
+	            )
+	          )
+	        );
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Work '
+	          'section',
+	          { className: 'work-head' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Work'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'work-nav' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { onClick: function onClick() {
+	                    return _this2.updateFilter(_portData2.default);
+	                  } },
+	                'All'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { onClick: function onClick() {
+	                    return _this2.updateFilter(designData);
+	                  } },
+	                'Design'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { onClick: function onClick() {
+	                    return _this2.updateFilter(devData);
+	                  } },
+	                'Development'
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'project-display' },
+	          _react2.default.createElement(
+	            'ul',
+	            null,
+	            projects
+	          )
 	        )
 	      );
 	    }
@@ -26672,6 +26846,39 @@
 
 /***/ },
 /* 231 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var portData = [{
+	  tittle: "test1",
+	  thumbImg: "./assets/images/test-back.png",
+	  category: 'Design'
+	}, {
+	  tittle: "test2",
+	  thumbImg: "./assets/images/test-back.png",
+	  category: 'Design'
+	}, {
+	  tittle: "test3",
+	  thumbImg: "./assets/images/test-back.png",
+	  category: 'Development'
+	}, {
+	  tittle: "test4",
+	  thumbImg: "./assets/images/test-back.png",
+	  category: 'Development'
+	}, {
+	  tittle: "test5",
+	  thumbImg: "./assets/images/test-back.png",
+	  category: 'Design'
+	}];
+
+	exports.default = portData;
+
+/***/ },
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26685,6 +26892,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _galleryData = __webpack_require__(233);
+
+	var _galleryData2 = _interopRequireDefault(_galleryData);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26702,19 +26913,47 @@
 	  function Photo(props) {
 	    _classCallCheck(this, Photo);
 
-	    return _possibleConstructorReturn(this, (Photo.__proto__ || Object.getPrototypeOf(Photo)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Photo.__proto__ || Object.getPrototypeOf(Photo)).call(this, props));
+
+	    _this.state = {
+	      imageGalleries: _galleryData2.default
+	    };
+	    return _this;
 	  }
 
 	  _createClass(Photo, [{
 	    key: 'render',
 	    value: function render() {
+	      var gallery = this.state.imageGalleries.map(function (data, index) {
+	        return _react2.default.createElement(
+	          'section',
+	          { key: index },
+	          _react2.default.createElement(
+	            'section',
+	            { className: 'gallery-name' },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              data.tittle
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'section',
+	            { className: 'gallery-img-container' },
+	            data.images.map(function (img, index) {
+	              return _react2.default.createElement('img', { key: index, src: img, alt: '' });
+	            })
+	          )
+	        );
+	      });
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Photo Page'
+	          'section',
+	          { className: 'galery-container' },
+	          gallery
 	        )
 	      );
 	    }
@@ -26724,6 +26963,120 @@
 	}(_react2.default.Component);
 
 	exports.default = Photo;
+
+/***/ },
+/* 233 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var galleryData = [{
+	  key: 1,
+	  tittle: "gallery1",
+	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
+	  style: 'gallery'
+	}, {
+	  key: 2,
+	  tittle: "gallery2",
+	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
+	  style: 'gallery'
+	}, {
+	  key: 3,
+	  tittle: "gallery3",
+	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
+	  style: 'gallery'
+	}, {
+	  key: 4,
+	  tittle: "gallery4",
+	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
+	  style: 'gallery'
+	}];
+
+	exports.default = galleryData;
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _portData = __webpack_require__(231);
+
+	var _portData2 = _interopRequireDefault(_portData);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var portItem = function (_React$Component) {
+	  _inherits(portItem, _React$Component);
+
+	  function portItem(props) {
+	    _classCallCheck(this, portItem);
+
+	    return _possibleConstructorReturn(this, (portItem.__proto__ || Object.getPrototypeOf(portItem)).call(this, props));
+	    // this.state = {
+	    //   projects: portData
+	    // }
+	  }
+
+	  // Match portfolio data with supplied link param
+
+
+	  _createClass(portItem, [{
+	    key: 'getPortItem',
+	    value: function getPortItem(data) {
+	      var currentPortItem = "";
+	      for (var i = 0; i < data.length; i++) {
+	        if (data[i].tittle === this.props.routeParams.portItemName) {
+	          currentPortItem = data[i];
+	        }
+	      }
+	      return currentPortItem;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var currentPortItem = this.getPortItem(_portData2.default);
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          currentPortItem.tittle
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          currentPortItem.category
+	        )
+	      );
+	    }
+	  }]);
+
+	  return portItem;
+	}(_react2.default.Component);
+
+	exports.default = portItem;
 
 /***/ }
 /******/ ]);
