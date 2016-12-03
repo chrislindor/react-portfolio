@@ -10,6 +10,9 @@ html {
   box-sizing: inherit;
   }
 
+/******************************************
+Header styles
+**********************************************/
 header {
   display: flex;
   justify-content: space-between;
@@ -37,6 +40,10 @@ header {
   color: rgb(255, 255, 255);
 }
 
+.logo-hidden {
+  visibility: hidden;
+}
+
 header button {
   outline: 0;
   border: none;
@@ -49,6 +56,10 @@ header button {
 .light-style {
   color: rgb(255, 255, 255);
 }
+
+/******************************************
+Navigation styles
+**********************************************/
 
 .nav-links {
   position: fixed;
@@ -71,7 +82,7 @@ header button {
   padding: 70px 0 0 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 25px;
   text-align: right;
 }
@@ -85,11 +96,12 @@ header button {
   font-size: 20px;
   width: 100vw;
   padding: 20px 0 0 0;
+  text-align: center;
 }
 
 .nav-links ul {
   list-style: none;
-  text-align: right;
+  text-align: center;
   width: 100vw;
 }
 
@@ -109,6 +121,10 @@ header button {
   visibility: hidden;
 }
 
+/******************************************
+Home page styles
+**********************************************/
+
 
 .home-display,
 .about {
@@ -127,7 +143,7 @@ header button {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 0 0 100px 0;
+  padding: 0 0 80px 0;
 }
 
 .home-ctrl {
@@ -164,7 +180,8 @@ flex-wrap: wrap;
 }
 
 .home-bttn-active {
-  border-bottom: 10px solid rgb(255, 255, 255);
+  border-bottom: 5px solid rgb(255, 255, 255);
+  height: 70px;
   /*border-right: 40px solid transparent;*/
   /*border-left: 40px solid transparent;*/
   /*border-radius: 20px;*/
@@ -200,6 +217,34 @@ flex-wrap: wrap;
   background-position: center;
   background-size: cover;
 }
+
+.home-inner {
+  width: 80vw;
+  color: #3E4041;
+  line-height: 150%;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-inner p {
+  font-size: 1.2em;
+}
+
+.home-inner  p a {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+
+/******************************************
+Work  styles
+**********************************************/
+
 
 
 /*MEdia query stars*/

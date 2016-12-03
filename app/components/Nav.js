@@ -25,7 +25,7 @@ class Nav extends React.Component {
       this.setState({
         buttonStyle: CloseIcon,
         navVis: "nav-links light-style" ,
-        logoStyle: "logo light-style",
+        logoStyle: "logo logo-hidden",
         buttonColor: "nav-open light-style"
       })
     } else {
@@ -52,13 +52,13 @@ class Nav extends React.Component {
         <nav className={this.state.navVis}>
             <ul>
               <li>
-                <Link to="/work" onClick={this.navClick}>Design</Link>
+                <Link to="/" onClick={this.navClick}>C.L.</Link>
               </li>
               <li>
-                <Link to="/work" onClick={this.navClick}>Development</Link>
+                <Link to="/work" onClick={this.navClick}><Fa iconClass="fa-pencil-square-o"/> <Fa iconClass="fa-code"/> Work</Link>
               </li>
               <li>
-                <Link to="/photo" onClick={this.navClick}>Photography</Link>
+                <Link to="/photo" onClick={this.navClick}><Fa iconClass="fa-camera"/> Photography</Link>
               </li>
               <li>
                 <section className="social-section">

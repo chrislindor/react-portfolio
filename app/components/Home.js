@@ -97,7 +97,9 @@ class Home extends React.Component {
             <p>
               Hello! I’m Christopher Lindor a Designer, self taught Web Developher and Photographer with over 6 years of exprience. I started out editing pictures in photoshop, and editing myspace profile templates in highschool which fueled my love for the web. I became intersted in photography as another creative outlet and now I never leave home with out a camera.
             </p>
-            <p>See my <Link to="/work">work</Link></p>
+            <p>
+              See my <Link to="/work"> work <Fa iconClass="fa-pencil-square-o"/> <Fa iconClass="fa-code"/>  </Link> and check out some of my <Link to="/photo">photography <Fa iconClass="fa-camera"/>  </Link>
+            </p>
           </section>
         </section>
 
