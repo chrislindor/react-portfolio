@@ -62,9 +62,9 @@ class Nav extends React.Component {
               </li>
               <li>
                 <section className="social-section">
-                  <a href="#"><Fa iconClass="fa-instagram social-button" /></a>
-                  <a href="#"><Fa iconClass="fa-github social-button" /></a>
-                  <a href="#"><Fa iconClass="fa-linkedin social-button" /></a>
+                  <a href="https://www.instagram.com/ftm_chris/" target="_blank" ><Fa iconClass="fa-instagram social-button" /></a>
+                  <a href="https://github.com/chrislindor" target="_blank" ><Fa iconClass="fa-github social-button" /></a>
+                  <a href="https://www.linkedin.com/in/chrislindor" target="_blank" ><Fa iconClass="fa-linkedin social-button" /></a>
                   <section className="email">
                       <a href="#">chrislindor@gmail.com</a>
                   </section>

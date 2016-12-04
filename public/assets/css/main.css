@@ -177,6 +177,7 @@ flex-wrap: wrap;
   fill: rgb(255, 255, 255);
   padding: 0 0 10px 0;
   mix-blend-mode: difference;
+  cursor: pointer;
 }
 
 .home-bttn-active {
@@ -245,8 +246,63 @@ flex-wrap: wrap;
 Work  styles
 **********************************************/
 
+.work {
+  width: 100vw;
+}
+
+.work-header {
+  padding: 100px 30px 0 30px;
+}
+.work-header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.work-nav {
+  list-style: none;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.work-nav li {
+}
+
+.filter-bttn {
+  outline: 0;
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  font-family: inherit;
+  text-align: center;
+  padding: 0 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter-bttn-active {
+  border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+figure {
+  margin: 0;
+}
 
 
+.project-display ul {
+  /*width: 100vw;*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.projects {
+  margin: 0;
+  padding: 0;
+}
+
+.project-img {
+  width: 100vw;
+}
 /*MEdia query stars*/
 
 @media only screen and (min-width: 450px ) {
