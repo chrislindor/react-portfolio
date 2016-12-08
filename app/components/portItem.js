@@ -15,7 +15,7 @@ class portItem extends React.Component {
   getPortItem(data) {
     let currentPortItem = "";
     for (let i = 0; i < data.length; i++) {
-      if (data[i].tittle === this.props.routeParams.portItemName) {
+      if (data[i].title === this.props.routeParams.portItemName) {
         currentPortItem = data[i];
       }
     }
@@ -27,8 +27,12 @@ class portItem extends React.Component {
 
     return (
       <div>
-        <h1>{currentPortItem.tittle}</h1>
-        <p>{currentPortItem.category}</p>
+        <section className="project-intro">
+          <img src={currentPortItem.thumbImg} alt="" className="intro-img"/>
+          <p className="intro-copy">
+            <span className="project-intro-bold">{currentPortItem.title}</span>{currentPortItem.intro}
+          </p>
+        </section>
       </div>
     )
   }

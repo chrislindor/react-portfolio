@@ -303,6 +303,17 @@ figure {
 .project-img {
   width: 100vw;
 }
+
+.project-tittle {
+  color: rgb(0, 0, 0);
+}
+.project-cat {
+  color: rgb(131, 131, 131);
+}
+
+.projects figcaption {
+  padding: 0 0 0 30px;
+}
 /*MEdia query stars*/
 
 @media only screen and (min-width: 450px ) {
