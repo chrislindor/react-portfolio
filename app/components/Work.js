@@ -31,9 +31,6 @@ class Work extends React.Component {
     },
     this.updateFilter = this.updateFilter.bind(this)
     this.stripState = this.stripState.bind(this)
-    this.updateAllProj = this.updateAllProj.bind(this)
-    this.updateDesignProj = this.updateDesignProj.bind(this)
-    this.updateDevProj = this.updateDevProj.bind(this)
   }
 
   stripState() {
@@ -44,27 +41,14 @@ class Work extends React.Component {
     })
   }
 
-  updateAllProj() {
-    this.setState({
-      allProj: "filter-bttn filter-bttn-active",
-    })
-  }
 
-  updateDesignProj() {
+  // filter function with a default param of ' All = portData'
+  updateFilter(filter, stateToChange) {
+    this.stripState();
     this.setState({
-      designProj: "filter-bttn filter-bttn-active",
-    })
-  }
+      projects: filter,
+      [stateToChange]: "filter-bttn filter-bttn-active"
 
-  updateDevProj() {
-    this.setState({
-      devProj: "filter-bttn filter-bttn-active",
-    })
-  }
-
-  updateFilter(filter) {
-    this.setState({
-      projects: filter
     })
   }
 
@@ -93,23 +77,17 @@ class Work extends React.Component {
             <ul className="work-nav">
               <li className={this.state.allProj} onClick={
                 () => {
-                  this.updateFilter(portData);
-                  this.stripState();
-                  this.updateAllProj();
+                  this.updateFilter(portData, "allProj");
                 }
               }>All</li>
               <li className={this.state.designProj} onClick={
                 () => {
-                  this.updateFilter(designData);
-                  this.stripState();
-                  this.updateDesignProj();
+                  this.updateFilter(designData, "designProj");
                 }
               }>Design</li>
               <li className={this.state.devProj} onClick={
                 () => {
-                  this.updateFilter(devData);
-                  this.stripState();
-                  this.updateDevProj();
+                  this.updateFilter(devData, "devProj");
                 }
               }>Development</li>
             </ul>

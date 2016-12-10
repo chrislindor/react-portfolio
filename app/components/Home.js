@@ -19,9 +19,7 @@ class Home extends React.Component {
       photoBttn: "home-bttn"
     }
     this.updateCreative = this.updateCreative.bind(this);
-    this.updateDev = this.updateDev.bind(this);
-    this.updateDesign = this.updateDesign.bind(this);
-    this.updatePhoto = this.updatePhoto.bind(this);
+    this.stripState = this.stripState.bind(this);
   }
 
   stripState() {
@@ -32,31 +30,13 @@ class Home extends React.Component {
     })
   }
 
-  updateDev() {
-    this.setState({
-      devBttn: 'home-bttn home-bttn-active'
-    })
-  }
-
-  updateDesign() {
-    this.setState({
-      designBttn: 'home-bttn home-bttn-active'
-    })
-  }
-
-  updatePhoto() {
-    this.setState({
-      photoBttn: 'home-bttn home-bttn-active'
-    })
-  }
-
-  updateCreative(type,status,stateToUpdate, updateFunc) {
+  updateCreative(type, status, stateToUpdate) {
     console.log(type);
     this.stripState();
     this.setState({
       creativeType: type,
       creativeStatus: status,
-      stateToUpdate: "home-bttn home-bttn-active"
+      [stateToUpdate]: "home-bttn home-bttn-active"
     })
   }
 
@@ -70,20 +50,17 @@ class Home extends React.Component {
               <p className="current-creative">{this.state.creativeStatus}</p>
               <img src="./assets/images/code.svg" className={this.state.devBttn} onClick={
                 () => {
-                  this.updateCreative("home-dev", "Developer");
-                  this.updateDev();
+                  this.updateCreative("home-dev", "Developer", "devBttn");
                 }
               }/>
               <img src="./assets/images/pencil-o.svg" className={this.state.designBttn} onClick={
                 () => {
-                  this.updateCreative("home-design", "Designer");
-                  this.updateDesign();
+                  this.updateCreative("home-design", "Designer", "designBttn");
                 }
               }/>
               <img src="./assets/images/camera.svg" className={this.state.photoBttn} onClick={
                 () => {
-                  this.updateCreative("home-photo", "Photographer");
-                  this.updatePhoto();
+                  this.updateCreative("home-photo", "Photographer", "photoBttn");
                 }
               }/>
             </section>
