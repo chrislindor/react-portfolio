@@ -72,10 +72,10 @@ class Home extends React.Component {
           <section className="home-inner">
             <h1>About Me</h1>
             <p>
-              Hello! I’m Christopher Lindor a Designer, self taught Web Developher and Photographer with over 6 years of exprience. I started out editing pictures in photoshop, and editing myspace profile templates in highschool which fueled my love for the web. I became intersted in photography as another creative outlet and now I never leave home with out a camera.
+              Hello! I’m Christopher Lindor a Designer, self taught Web Developer and Photographer with over 6 years of exprience. I started out editing pictures in photoshop and myspace profile templates in highschool, which fueled my love for the web. I became intersted in photography as another creative outlet and now I never leave home with out a camera.
             </p>
             <p>
-              See my <Link to="/work"> work <Fa iconClass="fa-pencil-square-o"/> <Fa iconClass="fa-code"/>  </Link> and check out some of my <Link to="/photo">photography <Fa iconClass="fa-camera"/>  </Link>
+              See my <Link to="/work"> work </Link> or check out some of my <Link to="/photo">photography</Link>
             </p>
           </section>
         </section>
