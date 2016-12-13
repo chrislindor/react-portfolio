@@ -58,9 +58,9 @@ class Work extends React.Component {
       return(
         <li className="projects" key={index}>
           <figure>
-            <Link to={`work/${data.title}`}><img className="project-img" src={data.thumbImg} alt=""/></Link>
+            <Link to={`work/${data.url}`}><img className="project-img" src={data.thumbImg} alt=""/></Link>
             <figcaption>
-              <h2> <Link className="project-title" to={`work/${data.title}`}>{data.title}</Link> </h2>
+              <h2> <Link className="project-title" to={`work/${data.url}`}>{data.title}</Link> </h2>
               <h3 className="project-cat">{data.category}</h3>
             </figcaption>
           </figure>

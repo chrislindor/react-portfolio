@@ -8,7 +8,8 @@ class portItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      item1Count: 1
+      item1Count: 1,
+      item2Count: 1,
     }
   }
 
@@ -16,7 +17,7 @@ class portItem extends React.Component {
   getPortItem(data) {
     let currentPortItem = "";
     for (let i = 0; i < data.length; i++) {
-      if (data[i].title === this.props.routeParams.portItemName) {
+      if (data[i].url === this.props.routeParams.portItemName) {
         currentPortItem = data[i];
       }
     }
@@ -29,7 +30,7 @@ class portItem extends React.Component {
     let currentPortItem = this.getPortItem(portData);
 
     const settings = {
-      dots: false,
+      dots: true,
       infinite: true,
       speed: 500,
       swipe: true,
@@ -37,7 +38,10 @@ class portItem extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       afterChange: (index) => {
-        this.setState({ item1Count: index + 1 });
+        this.setState({
+          item1Count: index + 1,
+          item2Count: index + 1,
+        });
       }
     }
 
@@ -67,17 +71,38 @@ class portItem extends React.Component {
           <Slider  {...settings}>
             { portGallery(currentPortItem.item1.imgs)}
           </Slider>
-          <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p>
+          {/* <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p> */}
           <p className="slide-caption">{currentPortItem.item1.caption}</p>
         </section>
+        {/* Checks the port data to see if other item set exisi then renders content */}
         {
           currentPortItem.item2 &&
           <section className="port-items">
             <Slider  {...settings}>
               { portGallery(currentPortItem.item2.imgs)}
             </Slider>
-            <p className="item-count">{this.state.item1Count}/{currentPortItem.item2.imgs.length}</p>
+            {/* <p className="item-count">{this.state.item2Count}/{currentPortItem.item2.imgs.length}</p> */}
             <p className="slide-caption">{currentPortItem.item2.caption}</p>
+          </section>
+        }
+        {
+          currentPortItem.item3 &&
+          <section className="port-items">
+            <Slider  {...settings}>
+              { portGallery(currentPortItem.item3.imgs)}
+            </Slider>
+            {/* <p className="item-count">{this.state.item1Count}/{currentPortItem.item3.imgs.length}</p> */}
+            <p className="slide-caption">{currentPortItem.item3.caption}</p>
+          </section>
+        }
+        {
+          currentPortItem.item4 &&
+          <section className="port-items">
+            <Slider  {...settings}>
+              { portGallery(currentPortItem.item4.imgs)}
+            </Slider>
+            {/* <p className="item-count">{this.state.item1Count}/{currentPortItem.item4.imgs.length}</p> */}
+            <p className="slide-caption">{currentPortItem.item4.caption}</p>
           </section>
         }
       </div>
