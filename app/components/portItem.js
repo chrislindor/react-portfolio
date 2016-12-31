@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider  from 'react-slick';
 import portData from './portData';
+import { Link } from 'react-router';
 
 
 
@@ -15,19 +16,34 @@ class portItem extends React.Component {
 
   // Match portfolio data with supplied link param
   getPortItem(data) {
-    let currentPortItem = "";
+    let itemData = "";
     for (let i = 0; i < data.length; i++) {
       if (data[i].url === this.props.routeParams.portItemName) {
-        currentPortItem = data[i];
+        itemData = {
+          currentItemData: data[i],
+          nextLinkData: data[i+1]
+        }
       }
     }
-    return currentPortItem;
+    return itemData;
   }
 
-
+  checkNext(data) {
+    let checkedItem = '';
+    if (data === undefined) {
+      checkedItem = portData[0];
+    } else {
+      checkedItem = data;
+    }
+    return checkedItem;
+  }
 
   render() {
-    let currentPortItem = this.getPortItem(portData);
+    let pageData = this.getPortItem(portData);
+    console.log(pageData);
+
+    let currentPortItem = pageData.currentItemData;
+    let nextPortItem = this.checkNext(pageData.nextLinkData);
 
     const settings = {
       dots: true,
@@ -105,6 +121,10 @@ class portItem extends React.Component {
             <p className="slide-caption">{currentPortItem.item4.caption}</p>
           </section>
         }
+        <section className='next-port-item'>
+          <p>Next</p>
+          <Link to={`work/${nextPortItem.url}`}>{nextPortItem.title}</Link>
+        </section>
       </div>
     )
   }

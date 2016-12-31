@@ -26,21 +26,25 @@ const portData = [
   },
   {
     title: "test2",
+    url: "test2",
     thumbImg: "./assets/images/test-back.png",
     category: 'Design'
   },
   {
     title: "test3",
+    url: "test3",
     thumbImg: "./assets/images/test-back.png",
     category: 'Development'
   },
   {
     title: "test4",
+    url: "test4",
     thumbImg: "./assets/images/test-back.png",
     category: 'Development'
   },
   {
     title: "test5",
+    url: "test5",
     thumbImg: "./assets/images/test-back.png",
     category: 'Design'
   }

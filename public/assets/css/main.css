@@ -1,3 +1,6 @@
+body {
+  background-color: white;
+}
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -21,34 +24,35 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*padding: 0 3vw 0 3vw ;*/
+  padding: 0 5vw 0 5vw ;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 10vh;
   z-index: 100;
-  /*background-color: #3E4041;*/
+  /*background-color: rgba(62, 64, 65, 1);*/
   mix-blend-mode: difference;
+  /*padding: 20px 30px 0 40px;*/
 }
 
 .logo {
   font-size: 25px;
   font-weight: 700;
   /*width: 150px;*/
-  padding-left: 30px;
 }
 
 .logo a {
   text-decoration: none;
   color: rgb(255, 255, 255);
+  mix-blend-mode: difference;
 }
 
 .logo-hidden {
   visibility: hidden;
 }
 
-header button {
+header .main-nav-button {
   outline: 0;
   border: none;
   background-color: transparent;
@@ -170,6 +174,8 @@ flex-wrap: wrap;
   /*background-color: #3E4041;*/
   text-align: center;
   font-size: 35px;
+  font-weight: 700;
+  /*font-family: "proxima-nova",sans-serif;*/
   margin: 20px 0;
   padding: 5px 20px;
   mix-blend-mode: difference;
@@ -241,7 +247,8 @@ flex-wrap: wrap;
 }
 
 .home-inner p {
-  font-size: 1.3em;
+  font-size: 1.1em;
+  font-family: "proxima-nova",sans-serif;
   /*letter-spacing: 1px;*/
 }
 
@@ -356,7 +363,7 @@ Project item  styles
 .intro-copy {
   margin: 0;
   width: 80vw;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 150%;
 }
 
@@ -376,11 +383,15 @@ Project item  styles
   width: 80vw;
   padding: 10px 0 0 0;
   text-align: left;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 150%;
   margin: 20px 0 0 0;
 }
 
+.intro-copy, .slide-caption {
+  font-family: "proxima-nova",sans-serif;
+
+}
 /*MEdia query stars*/
 
 @media only screen and (min-width: 450px ) {

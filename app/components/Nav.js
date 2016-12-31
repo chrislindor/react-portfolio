@@ -45,9 +45,9 @@ class Nav extends React.Component {
           <section className={this.state.logoStyle}>
             <Link to="/">Christopher Lindor</Link>
           </section>
-          <button className={this.state.buttonColor} onClick={this.navClick}>
+          <div className={` main-nav-button ${this.state.buttonColor} `}onClick={this.navClick}>
             {this.state.buttonStyle}
-          </button>
+          </div>
         </header>
         <nav className={this.state.navVis}>
             <ul>
