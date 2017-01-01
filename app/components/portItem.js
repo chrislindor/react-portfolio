@@ -82,6 +82,12 @@ class portItem extends React.Component {
           <p className="intro-copy">
             {currentPortItem.intro.text}
           </p>
+          {
+            currentPortItem.linkSrc &&
+            <p className="intro-link">
+              Github repo: <a href={currentPortItem.linkSrc}>Source Code</a>
+            </p>
+          }
         </section>
         <section className="port-items">
           <Slider  {...settings}>
@@ -123,7 +129,8 @@ class portItem extends React.Component {
         }
         <section className='next-port-item'>
           <p>Next</p>
-          <Link to={`work/${nextPortItem.url}`}>{nextPortItem.title}</Link>
+          <p><Link to={`work/${nextPortItem.url}`} className='next-link'>{nextPortItem.title}</Link></p>
+
         </section>
       </div>
     )

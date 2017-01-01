@@ -55,27 +55,40 @@ class Nav extends React.Component {
                 <Link to="/" onClick={this.navClick}>C.L.</Link>
               </li>
               <li>
-                <Link to="/work" onClick={this.navClick}><Fa iconClass="fa-pencil-square-o"/> <Fa iconClass="fa-code"/> Work</Link>
+                <Link to="/work" onClick={this.navClick}> Work</Link>
               </li>
               <li>
-                <Link to="/photo" onClick={this.navClick}><Fa iconClass="fa-camera"/> Photography</Link>
-              </li>
-              <li>
-                <section className="social-section">
-                  <a href="https://www.instagram.com/ftm_chris/" target="_blank" ><Fa iconClass="fa-instagram social-button" /></a>
-                  <a href="https://github.com/chrislindor" target="_blank" ><Fa iconClass="fa-github social-button" /></a>
-                  <a href="https://www.linkedin.com/in/chrislindor" target="_blank" ><Fa iconClass="fa-linkedin social-button" /></a>
-                  <section className="email">
-                      <a href="#">chrislindor@gmail.com</a>
-                  </section>
-
-                </section>
+                <Link to="/photo" onClick={this.navClick}> Photography</Link>
               </li>
             </ul>
+            <section className="social-section">
+              <a href="https://www.instagram.com/ftm_chris/" target="_blank" ><Fa iconClass="fa-instagram social-button" /></a>
+              <a href="https://github.com/chrislindor" target="_blank" ><Fa iconClass="fa-github social-button" /></a>
+              <a href="https://www.linkedin.com/in/chrislindor" target="_blank" ><Fa iconClass="fa-linkedin social-button" /></a>
+              <section className="email">
+                  <a href="#">chrislindor@gmail.com</a>
+              </section>
+
+            </section>
 
         </nav>
 
         {this.props.children}
+
+        <footer>
+          <p className="contact-info">
+            <a href="mailto:chrislindor@gmail.com">chrislindor@gmail.com</a>
+          </p>
+          <p className="social-icons">
+            <a href="https://www.instagram.com/ftm_chris/" target="_blank" ><Fa iconClass="fa-instagram" /></a>
+            <a href="https://github.com/chrislindor" target="_blank" ><Fa iconClass="fa-github" /></a>
+            <a href="https://www.linkedin.com/in/chrislindor" target="_blank" ><Fa iconClass="fa-linkedin" /></a>
+
+          </p>
+          <p>
+            &copy; Christopher Lindor 2017
+          </p>
+        </footer>
       </div>
     )
   }

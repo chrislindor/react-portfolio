@@ -13,10 +13,9 @@ class Home extends React.Component {
     super(props)
     this.state ={
       creativeType: "home-design",
-      creativeStatus: 'Designer',
-      designBttn: 'home-bttn home-bttn-active',
+      designBttn: 'home-bttn home-bttn-active-design',
       devBttn: "home-bttn",
-      photoBttn: "home-bttn"
+      photoBttn: "home-bttn",
     }
     this.updateCreative = this.updateCreative.bind(this);
     this.stripState = this.stripState.bind(this);
@@ -30,13 +29,12 @@ class Home extends React.Component {
     })
   }
 
-  updateCreative(type, status, stateToUpdate) {
+  updateCreative(type, stateToUpdate, actButton) {
     console.log(type);
     this.stripState();
     this.setState({
       creativeType: type,
-      creativeStatus: status,
-      [stateToUpdate]: "home-bttn home-bttn-active"
+      [stateToUpdate]: `home-bttn home-bttn-active-${actButton}`,
     })
   }
 
@@ -46,23 +44,24 @@ class Home extends React.Component {
         <section className="home-display">
           <section className={`home-img ${this.state.creativeType}`}>
 
-            <section className="home-ctrl">
-              <p className="current-creative">{this.state.creativeStatus}</p>
-              <img src="./assets/images/code.svg" className={this.state.devBttn} onClick={
+            <section className={`home-ctrl`}>
+
+              <section  className={this.state.designBttn} onClick={
                 () => {
-                  this.updateCreative("home-dev", "Developer", "devBttn");
+                  this.updateCreative("home-design", "designBttn", "design");
                 }
-              }/>
-              <img src="./assets/images/pencil-o.svg" className={this.state.designBttn} onClick={
+              }> Designer </section>
+              <section  className={this.state.devBttn} onClick={
                 () => {
-                  this.updateCreative("home-design", "Designer", "designBttn");
+                  this.updateCreative("home-dev", "devBttn", "dev");
                 }
-              }/>
-              <img src="./assets/images/camera.svg" className={this.state.photoBttn} onClick={
+              }> Developer </section>
+              <section  className={this.state.photoBttn} onClick={
                 () => {
-                  this.updateCreative("home-photo", "Photographer", "photoBttn");
+                  this.updateCreative("home-photo", "photoBttn", "photo");
                 }
-              }/>
+              }> Photographer </section>
+
             </section>
 
           </section>
