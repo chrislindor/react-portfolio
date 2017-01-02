@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider  from 'react-slick';
 import portData from './portData';
+import SliderDisplay from './SliderDisplay'
 import { Link } from 'react-router';
 
 
@@ -112,6 +113,7 @@ class portItem extends React.Component {
             </p>
           }
         </section>
+
         <section className="port-items">
           <Slider  {...settings1} ref='slider1'>
             { portGallery(currentPortItem.item1.imgs)}
@@ -125,6 +127,8 @@ class portItem extends React.Component {
           <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p>
           <p className="slide-caption">{currentPortItem.item1.caption}</p>
         </section>
+
+
         {/* Checks the port data to see if other item set exisi then renders content */}
         {
           currentPortItem.item2 &&
@@ -136,6 +140,8 @@ class portItem extends React.Component {
             <p className="slide-caption">{currentPortItem.item2.caption}</p>
           </section>
         }
+
+
         {
           currentPortItem.item3 &&
           <section className="port-items">
@@ -146,6 +152,8 @@ class portItem extends React.Component {
             <p className="slide-caption">{currentPortItem.item3.caption}</p>
           </section>
         }
+
+
         {
           currentPortItem.item4 &&
           <section className="port-items">
@@ -156,6 +164,8 @@ class portItem extends React.Component {
             <p className="slide-caption">{currentPortItem.item4.caption}</p>
           </section>
         }
+
+        
         <section className='next-port-item'>
           <p>Next</p>
           <p><Link to={`work/${nextPortItem.url}`} className='next-link'>{nextPortItem.title}</Link></p>
