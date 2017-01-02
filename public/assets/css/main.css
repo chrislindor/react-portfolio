@@ -421,6 +421,10 @@ Project item  styles
   margin: 20px 0 0 0;
 }
 
+.n-p-button {
+  visibility: hidden;
+}
+
 .intro-copy, .slide-caption {
   font-family: "proxima-nova",sans-serif;
 

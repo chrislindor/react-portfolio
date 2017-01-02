@@ -13,7 +13,9 @@ class portItem extends React.Component {
       item2Count: 1,
       item3Count: 1,
       item4Count: 1
-    }
+    },
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
   }
 
   // Match portfolio data with supplied link param
@@ -38,6 +40,13 @@ class portItem extends React.Component {
       checkedItem = data;
     }
     return checkedItem;
+  }
+
+  next(refToUpdate) {
+    this.refs[refToUpdate].slickNext()
+  }
+  previous(refToUpdate) {
+    this.refs[refToUpdate].slickPrev()
   }
 
   render() {
@@ -104,9 +113,15 @@ class portItem extends React.Component {
           }
         </section>
         <section className="port-items">
-          <Slider  {...settings1}>
+          <Slider  {...settings1} ref='slider1'>
             { portGallery(currentPortItem.item1.imgs)}
           </Slider>
+          <div className='n-p-button' onClick={() => {
+            this.previous('slider1');
+          }}>Previous</div>
+          <div className='n-p-button' onClick={() => {
+            this.next('slider1')
+          }}>Next</div>
           <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p>
           <p className="slide-caption">{currentPortItem.item1.caption}</p>
         </section>
@@ -114,7 +129,7 @@ class portItem extends React.Component {
         {
           currentPortItem.item2 &&
           <section className="port-items">
-            <Slider  {...settings2}>
+            <Slider  {...settings2} >
               { portGallery(currentPortItem.item2.imgs)}
             </Slider>
             <p className="item-count">{this.state.item2Count}/{currentPortItem.item2.imgs.length}</p>
@@ -127,7 +142,7 @@ class portItem extends React.Component {
             <Slider  {...settings3}>
               { portGallery(currentPortItem.item3.imgs)}
             </Slider>
-            <p className="item-count">{this.state.item1Count}/{currentPortItem.item3.imgs.length}</p>
+            <p className="item-count">{this.state.item3Count}/{currentPortItem.item3.imgs.length}</p>
             <p className="slide-caption">{currentPortItem.item3.caption}</p>
           </section>
         }
@@ -137,7 +152,7 @@ class portItem extends React.Component {
             <Slider  {...settings4}>
               { portGallery(currentPortItem.item4.imgs)}
             </Slider>
-            <p className="item-count">{this.state.item1Count}/{currentPortItem.item4.imgs.length}</p>
+            <p className="item-count">{this.state.item4Count}/{currentPortItem.item4.imgs.length}</p>
             <p className="slide-caption">{currentPortItem.item4.caption}</p>
           </section>
         }
