@@ -1,11 +1,14 @@
+const imgPath = "./assets/images/"
+
 const galleryData = [
   {
     key: 1,
     tittle: "gallery1",
     images: [
-      "./assets/images/test-back.png",
-      "./assets/images/test-back.png",
-      "./assets/images/test-back.png"
+      `${imgPath}photo-back-4.png`,
+      `${imgPath}photo-back-3.jpg`,
+      `${imgPath}photo-back-2.png`,
+
     ],
     style: 'gallery'
   },
