@@ -4,7 +4,9 @@ import portData from './portData';
 import SliderDisplay from './SliderDisplay'
 import { Link } from 'react-router';
 
-
+const Fa = (props) => {
+  return <i className={`fa ${props.iconClass}`} aria-hidden="true"></i>
+};
 
 class portItem extends React.Component {
   constructor(props) {
@@ -101,7 +103,10 @@ class portItem extends React.Component {
     return (
       <div>
         <section className="project-intro">
-          <img src={currentPortItem.intro.img} alt="" className="intro-img"/>
+          <section className='flex-img-cont'>
+            <img src={currentPortItem.intro.img} alt="" className="intro-img"/>
+          </section>
+
           <h1 className="port-title">{currentPortItem.title}</h1>
           <p className="intro-copy">
             {currentPortItem.intro.text}
@@ -115,17 +120,26 @@ class portItem extends React.Component {
         </section>
 
         <section className="port-items">
-          <Slider  {...settings1} ref='slider1'>
-            { portGallery(currentPortItem.item1.imgs)}
-          </Slider>
-          <div className='n-p-button' onClick={() => {
-            this.previous('slider1');
-          }}>Previous</div>
-          <div className='n-p-button' onClick={() => {
-            this.next('slider1')
-          }}>Next</div>
-          <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p>
-          <p className="slide-caption">{currentPortItem.item1.caption}</p>
+          <section className="slick-container">
+            <Slider  {...settings1} ref='slider1'>
+              { portGallery(currentPortItem.item1.imgs)}
+            </Slider>
+          </section>
+
+          <section className="slide-caption-container">
+            <p className="slide-caption">{currentPortItem.item1.caption}</p>
+            <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p>
+            <section className="slide-control">
+              <div className='n-p-button bttn-room' onClick={() => {
+                this.previous('slider1');
+              }}><Fa iconClass='fa-angle-left'/></div>
+              <div className='n-p-button' onClick={() => {
+                this.next('slider1')
+              }}><Fa iconClass='fa-angle-right'/></div>
+            </section>
+          </section>
+
+
         </section>
 
 
@@ -133,9 +147,11 @@ class portItem extends React.Component {
         {
           currentPortItem.item2 &&
           <section className="port-items">
-            <Slider  {...settings2} >
-              { portGallery(currentPortItem.item2.imgs)}
-            </Slider>
+            <section className="slick-container">
+              <Slider  {...settings2} >
+                { portGallery(currentPortItem.item2.imgs)}
+              </Slider>
+            </section>
             <p className="item-count">{this.state.item2Count}/{currentPortItem.item2.imgs.length}</p>
             <p className="slide-caption">{currentPortItem.item2.caption}</p>
           </section>
@@ -145,9 +161,11 @@ class portItem extends React.Component {
         {
           currentPortItem.item3 &&
           <section className="port-items">
-            <Slider  {...settings3}>
-              { portGallery(currentPortItem.item3.imgs)}
-            </Slider>
+            <section className="slick-container">
+              <Slider  {...settings3}>
+                { portGallery(currentPortItem.item3.imgs)}
+              </Slider>
+            </section>
             <p className="item-count">{this.state.item3Count}/{currentPortItem.item3.imgs.length}</p>
             <p className="slide-caption">{currentPortItem.item3.caption}</p>
           </section>
@@ -157,15 +175,17 @@ class portItem extends React.Component {
         {
           currentPortItem.item4 &&
           <section className="port-items">
-            <Slider  {...settings4}>
-              { portGallery(currentPortItem.item4.imgs)}
-            </Slider>
+            <section className="slick-container">
+              <Slider  {...settings4}>
+                { portGallery(currentPortItem.item4.imgs)}
+              </Slider>
+            </section>
             <p className="item-count">{this.state.item4Count}/{currentPortItem.item4.imgs.length}</p>
             <p className="slide-caption">{currentPortItem.item4.caption}</p>
           </section>
         }
 
-        
+
         <section className='next-port-item'>
           <p>Next</p>
           <p><Link to={`work/${nextPortItem.url}`} className='next-link'>{nextPortItem.title}</Link></p>

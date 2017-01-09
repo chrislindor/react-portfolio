@@ -166,9 +166,10 @@ Home page styles
 width: 100%;
 background-color: transparent;
 display: flex;
-justify-content: flex-start;
-align-items: flex-end;
+/*justify-content: flex-start;*/
+align-items: flex-start;
 flex-wrap: wrap;
+flex-direction: column;
 padding-left: 5vw;
 }
 
@@ -189,8 +190,6 @@ padding-left: 5vw;
 }
 
 .home-bttn {
-  width: 100%;
-  /*height: 55px;*/
   border: none;
   font-size: 40px;
   font-weight: 900;
@@ -199,31 +198,18 @@ padding-left: 5vw;
   cursor: pointer;
 }
 
-.home-bttn-active {
-  /*border-bottom: 5px solid rgb(255, 255, 255);
-  height: 70px;*/
-  /*border-right: 40px solid transparent;*/
-  /*border-left: 40px solid transparent;*/
-  /*border-radius: 20px;*/
-}
 
-.home-bttn>.fa {
-  position: relative;
-  left: -10px;
-}
+
+
 /*.home-bttn:nth-of-type(2) {
   margin: 0 20px;
 }*/
 
-.home-bttn::before {
-  display: inline-block;
-  text-align: center;
-}
-
 .home-design {
   background-color: rgba(119, 198, 255, 1);
   background-image: url('../images/design-back.svg');
-  background-position: center 30%;
+  background-position-x: center ;
+  background-position-y: 30%;
   background-repeat: no-repeat;
   background-size: 50%;
   color: rgba(0, 85, 164, 0.5);
@@ -235,7 +221,8 @@ padding-left: 5vw;
 .home-dev {
   background-color: rgba(250, 250, 250, 1);
   background-image: url('../images/dev-back.png');
-  background-position: center 25%;
+  background-position-x: center;
+  background-position-y: 25%;
   background-size: 85%;
   background-repeat: no-repeat;
   color: rgba(228, 87, 73, 0.5);
@@ -291,7 +278,7 @@ Work  styles
 }
 
 .work-header {
-  padding: 100px 30px 0 30px;
+  padding: 150px 30px 0 30px;
 }
 .work-header h1 {
   font-size: 2.5em;
@@ -309,8 +296,6 @@ Work  styles
   font-family: "proxima-nova",sans-serif;
 }
 
-.work-nav li {
-}
 
 .filter-bttn {
   outline: 0;
@@ -338,14 +323,18 @@ figure {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 .projects {
+  /*flex: 1 0 100%;*/
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .project-img {
-  width: 100vw;
+  width: 100%;
 }
 
 .project-title {
@@ -369,8 +358,8 @@ Project item  styles
   padding: 90px 0 0 0;
   width: 100vw;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 .port-title {
@@ -389,6 +378,9 @@ Project item  styles
   flex-wrap: wrap;
 }
 
+.flex-img-cont {
+  width: 100%;
+}
 .intro-img {
   width: 100%;
 }
@@ -401,7 +393,7 @@ Project item  styles
 }
 
 .slide-img {
-  width: 100vw;
+  width: 100%;
 }
 
 .item-count {
@@ -410,8 +402,17 @@ Project item  styles
   text-align: right;
   padding: 20px 20px 0 0;
   margin: 0;
+  order: 1
 }
-
+.slick-container{
+  width: 100%;
+}
+.slide-caption-container{
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 .slide-caption {
   width: 80vw;
   padding: 20px 0 0 0;
@@ -419,10 +420,14 @@ Project item  styles
   font-size: 1.1em;
   line-height: 150%;
   margin: 20px 0 0 0;
+  order: 2;
+  align-self: center;
 }
 
 .n-p-button {
   visibility: hidden;
+  position: absolute;
+  top: 0;
 }
 
 .intro-copy, .slide-caption {
@@ -518,10 +523,10 @@ footer .social-icons {
 }
 /*MEdia query stars*/
 
-@media only screen and (min-width: 450px ) {
+@media only screen and (min-width: 600px ) {
 
   body {
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
   }
   header {
     display: flex;
@@ -537,8 +542,124 @@ footer .social-icons {
   }
 
   .logo {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 700;
   }
+  /* Nav Styles*/
+  .nav-links {
+    font-size: 50px;
+  }
+  .social-button {
+    font-size: 50px;
+  }
+  /*Home styles*/
 
+  .home-display,
+  .home-img {
+    height: 90vh;
+  }
+
+  .home-bttn {
+    font-size: 70px;
+  }
+
+  .home-design {
+    background-position-x: 90%;
+    background-size: 30%;
+  }
+  .home-dev {
+    background-position-x: 80%;
+    background-position-y: 40%;
+    background-size: 30%;
+
+  }
+
+  .home-inner {
+    width: 40vw;
+  }
+
+  /*Work page */
+  .work-header h1 {
+    /*justify-content: flex-start;*/
+  }
+  .project-display {
+    padding: 1%;
+  }
+  .project-display ul {
+    /*justify-content: center;*/
+  }
+  .projects {
+    /*flex: 1 0 33%;*/
+    width: 50%;
+    padding: 3%;
+  }
+  .projects figcaption {
+    padding: 0;
+  }
+
+  /*Project items*/
+  .port-title {
+    font-size: 3em;
+    padding: 30px 20px 20px 20px;
+    top: -60px;
+  }
+  .intro-copy {
+    width: 50vw;
+  }
+  .n-p-button {
+    visibility: visible;
+  }
+  .port-items {
+    justify-content: flex-start;
+  }
+
+  .slick-container {
+    width: 75%;
+    order: 1;
+  }
+  .slide-caption-container {
+    order: 2;
+    width: 25%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .slide-caption {
+    width: 100%;
+    order: 1;
+  }
+  .item-count {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+  .slide-control {
+    order: 3;
+    /*position: absolute;
+    left: 70%;*/
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .n-p-button {
+    position: static;;
+    align-self: center;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 1);
+    color: rgb(255, 255, 255);
+    width: 45px;
+    height: 55px;
+    padding-top: 5px;
+  }
+  .bttn-room {
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (min-width: 1366px ) {
+  .projects {
+    width: 33%;
+  }
 }

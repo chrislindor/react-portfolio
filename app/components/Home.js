@@ -19,6 +19,7 @@ class Home extends React.Component {
     }
     this.updateCreative = this.updateCreative.bind(this);
     this.stripState = this.stripState.bind(this);
+    // this.homeClick = this.homeClick.bind(this);
   }
 
   stripState() {
@@ -38,11 +39,22 @@ class Home extends React.Component {
     })
   }
 
+  // homeClick() {
+  //   this.stripState();
+  //   if (this.state.creativeType = 'home-design') {
+  //     this.updateCreative("home-dev", "devBttn", "dev");
+  //   } else if (this.state.creativeType = 'home-dev') {
+  //     this.updateCreative("home-photo", "photoBttn", "photo");
+  //   } else {
+  //     this.updateCreative("home-design", "designBttn", "design");
+  //   }
+  // }
+
   render() {
     return (
       <div>
         <section className="home-display">
-          <section className={`home-img ${this.state.creativeType}`}>
+          <section className={`home-img ${this.state.creativeType}`} >
 
             <section className={`home-ctrl`}>
 
