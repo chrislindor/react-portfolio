@@ -118,8 +118,27 @@ class portItem extends React.Component {
             </p>
           }
         </section>
+        <SliderDisplay
 
-        <section className="port-items">
+          prevButton={() => {
+            this.previous('slider1')
+          }}
+          nextButton={() => {
+            this.next('slider1')
+          }}
+          currentSlide={this.state.item1Count}
+          totalSlides={currentPortItem.item1.imgs.length}
+          slideCaption={currentPortItem.item1.caption}
+        >
+
+            <Slider  {...settings1} ref='slider1'>
+              { portGallery(currentPortItem.item1.imgs)}
+            </Slider>
+
+        </SliderDisplay>
+
+
+        {/* <section className="port-items">
           <section className="slick-container">
             <Slider  {...settings1} ref='slider1'>
               { portGallery(currentPortItem.item1.imgs)}
@@ -139,50 +158,73 @@ class portItem extends React.Component {
             </section>
           </section>
 
-
-        </section>
+        </section> */}
 
 
         {/* Checks the port data to see if other item set exisi then renders content */}
         {
           currentPortItem.item2 &&
-          <section className="port-items">
-            <section className="slick-container">
-              <Slider  {...settings2} >
+          <SliderDisplay
+            prevButton={() => {
+              this.previous('slider2')
+            }}
+            nextButton={() => {
+              this.next('slider2')
+            }}
+            currentSlide={this.state.item2Count}
+            totalSlides={currentPortItem.item2.imgs.length}
+            slideCaption={currentPortItem.item2.caption}
+          >
+
+              <Slider  {...settings2} ref='slider2'>
                 { portGallery(currentPortItem.item2.imgs)}
               </Slider>
-            </section>
-            <p className="item-count">{this.state.item2Count}/{currentPortItem.item2.imgs.length}</p>
-            <p className="slide-caption">{currentPortItem.item2.caption}</p>
-          </section>
+
+          </SliderDisplay>
         }
 
 
         {
           currentPortItem.item3 &&
-          <section className="port-items">
-            <section className="slick-container">
-              <Slider  {...settings3}>
+          <SliderDisplay
+            prevButton={() => {
+              this.previous('slider3')
+            }}
+            nextButton={() => {
+              this.next('slider3')
+            }}
+            currentSlide={this.state.item3Count}
+            totalSlides={currentPortItem.item3.imgs.length}
+            slideCaption={currentPortItem.item3.caption}
+          >
+
+              <Slider  {...settings3} ref='slider3'>
                 { portGallery(currentPortItem.item3.imgs)}
               </Slider>
-            </section>
-            <p className="item-count">{this.state.item3Count}/{currentPortItem.item3.imgs.length}</p>
-            <p className="slide-caption">{currentPortItem.item3.caption}</p>
-          </section>
+
+          </SliderDisplay>
         }
 
 
         {
           currentPortItem.item4 &&
-          <section className="port-items">
-            <section className="slick-container">
-              <Slider  {...settings4}>
+          <SliderDisplay
+            prevButton={() => {
+              this.previous('slider4')
+            }}
+            nextButton={() => {
+              this.next('slider4')
+            }}
+            currentSlide={this.state.item4Count}
+            totalSlides={currentPortItem.item4.imgs.length}
+            slideCaption={currentPortItem.item4.caption}
+          >
+
+              <Slider  {...settings4} ref='slider4'>
                 { portGallery(currentPortItem.item4.imgs)}
               </Slider>
-            </section>
-            <p className="item-count">{this.state.item4Count}/{currentPortItem.item4.imgs.length}</p>
-            <p className="slide-caption">{currentPortItem.item4.caption}</p>
-          </section>
+
+          </SliderDisplay>
         }
 
 
