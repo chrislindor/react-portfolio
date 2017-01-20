@@ -490,10 +490,12 @@ Gallery Styles
 .gall-container {
   padding-top: 50px;
   text-align: center;
+  width: 100vw;
 }
 
 .gall-container img {
-  width: 100vw;
+  width: 100%;
+  padding-bottom: 60px;
 }
 
 /******************************************
@@ -609,8 +611,15 @@ footer .social-icons {
   .n-p-button {
     visibility: visible;
   }
+  .gall-container {
+    padding: 70px 10vw 0 10vw;
+  }
+}
+
+@media only screen and (min-width: 800px) {
   .port-items {
     justify-content: flex-start;
+    margin: 150px 0 0 0;
   }
 
   .slick-container {
@@ -636,6 +645,8 @@ footer .social-icons {
     text-align: center;
   }
   .slide-control {
+    padding-top: 15px;
+    margin-right: 11px;
     order: 3;
     /*position: absolute;
     left: 70%;*/
@@ -656,7 +667,13 @@ footer .social-icons {
   .bttn-room {
     margin-right: 5px;
   }
+
+
+  .n-p-button {
+    visibility: visible;
+  }
 }
+
 
 @media only screen and (min-width: 1366px ) {
   .projects {
