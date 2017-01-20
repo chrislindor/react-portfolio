@@ -119,7 +119,6 @@ class portItem extends React.Component {
           }
         </section>
         <SliderDisplay
-
           prevButton={() => {
             this.previous('slider1')
           }}
@@ -138,27 +137,7 @@ class portItem extends React.Component {
         </SliderDisplay>
 
 
-        {/* <section className="port-items">
-          <section className="slick-container">
-            <Slider  {...settings1} ref='slider1'>
-              { portGallery(currentPortItem.item1.imgs)}
-            </Slider>
-          </section>
 
-          <section className="slide-caption-container">
-            <p className="slide-caption">{currentPortItem.item1.caption}</p>
-            <p className="item-count">{this.state.item1Count}/{currentPortItem.item1.imgs.length}</p>
-            <section className="slide-control">
-              <div className='n-p-button bttn-room' onClick={() => {
-                this.previous('slider1');
-              }}><Fa iconClass='fa-angle-left'/></div>
-              <div className='n-p-button' onClick={() => {
-                this.next('slider1')
-              }}><Fa iconClass='fa-angle-right'/></div>
-            </section>
-          </section>
-
-        </section> */}
 
 
         {/* Checks the port data to see if other item set exisi then renders content */}
