@@ -54,7 +54,7 @@ class Home extends React.Component {
     return (
       <div>
         <section className="home-display" >
-          <section className={`home-img ${this.state.creativeType}`} onClick={this.homeClick}>
+          <section className={`home-img ${this.state.creativeType}`}>
 
             <section className={`home-ctrl`}>
 
