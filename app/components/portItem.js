@@ -1,7 +1,8 @@
 import React from 'react';
 import Slider  from 'react-slick';
 import portData from './portData';
-import SliderDisplay from './SliderDisplay'
+import SliderDisplay from './SliderDisplay';
+import PortIntro from './portIntro'
 import { Link } from 'react-router';
 
 const Fa = (props) => {
@@ -102,38 +103,22 @@ class portItem extends React.Component {
 
     return (
       <div>
-        <section className="project-intro">
-          <section className='flex-img-cont'>
-            <img src={currentPortItem.intro.img} alt="" className="intro-img"/>
-          </section>
+        <PortIntro
+          introImg={currentPortItem.intro.img}
+          itemTitle={currentPortItem.title}
+          introText={currentPortItem.intro.text}
+        />
 
-          <h1 className="port-title">{currentPortItem.title}</h1>
-          <p className="intro-copy">
-            {currentPortItem.intro.text}
-          </p>
-          {
-            currentPortItem.linkSrc &&
-            <p className="intro-link">
-              Github repo: <a href={currentPortItem.linkSrc}>Source Code</a>
-            </p>
-          }
-        </section>
         <SliderDisplay
-          prevButton={() => {
-            this.previous('slider1')
-          }}
-          nextButton={() => {
-            this.next('slider1')
-          }}
+          prevButton={() => {this.previous('slider1')}}
+          nextButton={() => {this.next('slider1')}}
           currentSlide={this.state.item1Count}
           totalSlides={currentPortItem.item1.imgs.length}
           slideCaption={currentPortItem.item1.caption}
         >
-
             <Slider  {...settings1} ref='slider1'>
               { portGallery(currentPortItem.item1.imgs)}
             </Slider>
-
         </SliderDisplay>
 
 
@@ -144,21 +129,15 @@ class portItem extends React.Component {
         {
           currentPortItem.item2 &&
           <SliderDisplay
-            prevButton={() => {
-              this.previous('slider2')
-            }}
-            nextButton={() => {
-              this.next('slider2')
-            }}
+            prevButton={() => this.previous('slider2')}
+            nextButton={() => this.next('slider2')}
             currentSlide={this.state.item2Count}
             totalSlides={currentPortItem.item2.imgs.length}
             slideCaption={currentPortItem.item2.caption}
           >
-
               <Slider  {...settings2} ref='slider2'>
                 { portGallery(currentPortItem.item2.imgs)}
               </Slider>
-
           </SliderDisplay>
         }
 
@@ -166,21 +145,15 @@ class portItem extends React.Component {
         {
           currentPortItem.item3 &&
           <SliderDisplay
-            prevButton={() => {
-              this.previous('slider3')
-            }}
-            nextButton={() => {
-              this.next('slider3')
-            }}
+            prevButton={() => this.previous('slider3')}
+            nextButton={() => this.next('slider3')}
             currentSlide={this.state.item3Count}
             totalSlides={currentPortItem.item3.imgs.length}
             slideCaption={currentPortItem.item3.caption}
           >
-
               <Slider  {...settings3} ref='slider3'>
                 { portGallery(currentPortItem.item3.imgs)}
               </Slider>
-
           </SliderDisplay>
         }
 
@@ -188,21 +161,15 @@ class portItem extends React.Component {
         {
           currentPortItem.item4 &&
           <SliderDisplay
-            prevButton={() => {
-              this.previous('slider4')
-            }}
-            nextButton={() => {
-              this.next('slider4')
-            }}
+            prevButton={() => this.previous('slider4')}
+            nextButton={() => this.next('slider4')}
             currentSlide={this.state.item4Count}
             totalSlides={currentPortItem.item4.imgs.length}
             slideCaption={currentPortItem.item4.caption}
           >
-
               <Slider  {...settings4} ref='slider4'>
                 { portGallery(currentPortItem.item4.imgs)}
               </Slider>
-
           </SliderDisplay>
         }
 
