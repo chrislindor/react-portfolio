@@ -48,10 +48,14 @@ const portData = [
     skills: "Photography,  Design"
   },
   {
-    title: "test3",
-    url: "test3",
-    thumbImg: "./assets/images/test-back.png",
-    category: 'Development'
+    title: "jQuery Playground",
+    url: "jquery-playground",
+    thumbImg: `${imgPath}jquery/jq-thumb.png`,
+    category: 'Development',
+    intro: {
+      text:" Supreme NY was established in 1994, and has grew to be the embodiment of skate and street culture through its 20+ year run. I created a mock Ad campaign from a photoshoot that I also did that includes subway ads, a metrocard ad and a outdoor billboard. ",
+      img: `${imgPath}absolut/ab-intro.png`
+    },
   },
   {
     title: "test4",

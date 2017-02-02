@@ -108,19 +108,19 @@ class portItem extends React.Component {
           itemTitle={currentPortItem.title}
           introText={currentPortItem.intro.text}
         />
-
-        <SliderDisplay
-          prevButton={() => {this.previous('slider1')}}
-          nextButton={() => {this.next('slider1')}}
-          currentSlide={this.state.item1Count}
-          totalSlides={currentPortItem.item1.imgs.length}
-          slideCaption={currentPortItem.item1.caption}
-        >
-            <Slider  {...settings1} ref='slider1'>
-              { portGallery(currentPortItem.item1.imgs)}
-            </Slider>
-        </SliderDisplay>
-
+        {currentPortItem.item1 &&
+          <SliderDisplay
+            prevButton={() => {this.previous('slider1')}}
+            nextButton={() => {this.next('slider1')}}
+            currentSlide={this.state.item1Count}
+            totalSlides={currentPortItem.item1.imgs.length}
+            slideCaption={currentPortItem.item1.caption}
+          >
+              <Slider  {...settings1} ref='slider1'>
+                { portGallery(currentPortItem.item1.imgs)}
+              </Slider>
+          </SliderDisplay>
+      }
 
 
 
