@@ -2,7 +2,8 @@ import React from 'react';
 import Slider  from 'react-slick';
 import portData from './portData';
 import SliderDisplay from './SliderDisplay';
-import PortIntro from './portIntro'
+import PortIntro from './portIntro';
+import ProjectLink from './ProjectLink'
 import { Link } from 'react-router';
 
 const Fa = (props) => {
@@ -36,6 +37,7 @@ class portItem extends React.Component {
     return itemData;
   }
 
+  // generate link to next portfolio item
   checkNext(data) {
     let checkedItem = '';
     if (data === undefined) {
@@ -46,6 +48,7 @@ class portItem extends React.Component {
     return checkedItem;
   }
 
+  //slider next and previous functions
   next(refToUpdate) {
     this.refs[refToUpdate].slickNext()
   }
@@ -81,7 +84,6 @@ class portItem extends React.Component {
       return handleCount;
     }
 
-    let item1Tracker = masterCounter('item1Count');
 
 
     const settings1 = Object.assign({}, settings, masterCounter('item1Count'));
@@ -107,6 +109,9 @@ class portItem extends React.Component {
           introImg={currentPortItem.intro.img}
           itemTitle={currentPortItem.title}
           introText={currentPortItem.intro.text}
+          linkSrc={currentPortItem.repo.git}
+          liveLink={currentPortItem.repo.demo}
+          repoImg={currentPortItem.repo.img}
         />
         {currentPortItem.item1 &&
           <SliderDisplay
@@ -122,10 +127,6 @@ class portItem extends React.Component {
           </SliderDisplay>
       }
 
-
-
-
-        {/* Checks the port data to see if other item set exisi then renders content */}
         {
           currentPortItem.item2 &&
           <SliderDisplay
@@ -175,8 +176,13 @@ class portItem extends React.Component {
 
 
         <section className='next-port-item'>
-          <p>Next</p>
-          <p><Link to={`work/${nextPortItem.url}`} className='next-link'>{nextPortItem.title}</Link></p>
+          <h1>Next</h1>
+          <ProjectLink
+            projectUrl={nextPortItem.url}
+            thumbImg={nextPortItem.thumbImg}
+            projectTitle={nextPortItem.title}
+            projectCat={nextPortItem.category}
+          />
 
         </section>
       </div>

@@ -17,6 +17,10 @@ html {
     min-height: 0;
     min-width: 0;
   }
+
+a:link {
+  text-decoration: none;
+}
 /******************************************
 Header styles
 **********************************************/
@@ -267,7 +271,6 @@ padding-left: 5vw;
 .home-inner  p a {
   color: rgb(0, 0, 0);
   font-weight: 700;
-  text-decoration: underline;
 }
 
 
@@ -314,6 +317,8 @@ Work  styles
 .filter-bttn-active {
   border-bottom: 3px solid rgb(0, 0, 0);
 }
+.filter-span {
+}
 
 figure {
   margin: 0;
@@ -342,10 +347,14 @@ figure {
 .project-title {
   color: rgb(0, 0, 0);
 }
+.proj-h2 {
+  margin-bottom: 10px;
+}
 .project-cat {
   color: rgb(131, 131, 131);
   font-family: "proxima-nova",sans-serif;
   font-weight: 400;
+  margin-top: 0;
 }
 
 .projects figcaption {
@@ -394,6 +403,30 @@ Project item  styles
   line-height: 150%;
 }
 
+
+
+.repo-section {
+  /*font-size: 100px;*/
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.repo-links {
+  text-align: center;
+  font-family: "proxima-nova",sans-serif;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.repo-links a {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.repo-section img {
+  width: 100%;
+}
+
 .slide-img {
   width: 100%;
 }
@@ -438,8 +471,8 @@ Project item  styles
 }
 
 .next-port-item {
-  margin: 30px 0 0 0;
-  height: 150px;
+  margin: 80px 0 0 0;
+  /*height: 150px;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -458,6 +491,33 @@ Project item  styles
   color: rgb(0, 0, 0);
 }
 
+.next-port-item .projects {
+  list-style: none;
+  width: 100%;
+}
+
+.next-port-item figure {
+  display: flex;
+}
+.next-port-item figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 0 20px;
+}
+.next-port-item figure>a , .next-port-item figcaption {
+  flex: 1;
+}
+.next-port-item h2 {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+.next-port-item h3 {
+  font-size: .8em;
+  margin: 5px 0;
+}
 .slick-dots {
   bottom: -30px;
 }
@@ -616,6 +676,9 @@ footer .social-icons {
   .gall-container {
     padding: 70px 10vw 0 10vw;
   }
+  .repo-section img {
+    width: 80%;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -674,6 +737,17 @@ footer .social-icons {
 
   .n-p-button {
     visibility: visible;
+  }
+  .next-port-item .projects {
+    width: 50%;
+  }
+  .next-port-item h2 {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  .next-port-item h3 {
+    font-size: 1em;
+    margin: 5px 0;
   }
 }
 

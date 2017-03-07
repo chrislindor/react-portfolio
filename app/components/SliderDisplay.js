@@ -34,50 +34,11 @@ class SliderDisplay extends React.Component {
 }
 
 SliderDisplay.propTypes = {
-
   prevButton: React.PropTypes.func.isRequired,
   nextButton: React.PropTypes.func.isRequired,
   currentSlide: React.PropTypes.number.isRequired,
   totalSlides: React.PropTypes.number.isRequired,
   slideCaption: React.PropTypes.string.isRequired
 }
-
-
-{/* <SliderDisplay
-  sliderSettings={settings1}
-  sliderRef='slider1'
-  sliderImages={() => {
-    portGallery(currentPortItem.item1.imgs)
-  }}
-  prevButton={() => {
-    this.previous('slider1')
-  }}
-  nextButton={() => {
-    this.next('slider1')
-  }}
-  currentSlide={this.state.item1Count}
-  totalSlides={currentPortItem.item1.imgs.length}
-  slideCaption={currentPortItem.item1.caption}
-/> */}
-
-{/* <SliderDisplay
-
-  prevButton={() => {
-    this.previous('slider1')
-  }}
-  nextButton={() => {
-    this.next('slider1')
-  }}
-  currentSlide={this.state.item1Count}
-  totalSlides={currentPortItem.item1.imgs.length}
-  slideCaption={currentPortItem.item1.caption}
->
-  <section className="slick-container">
-    <Slider  {...settings1} ref='slider1'>
-      { portGallery(currentPortItem.item1.imgs)}
-    </Slider>
-  </section>
-</SliderDisplay> */}
-
 
 export default SliderDisplay;

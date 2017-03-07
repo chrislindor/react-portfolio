@@ -12,9 +12,9 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state ={
-      creativeType: "home-design",
-      designBttn: 'home-bttn home-bttn-active-design',
-      devBttn: "home-bttn",
+      creativeType: "home-dev",
+      designBttn: 'home-bttn',
+      devBttn: "home-bttn home-bttn-active-dev",
       photoBttn: "home-bttn",
     }
     this.updateCreative = this.updateCreative.bind(this);

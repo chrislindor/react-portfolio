@@ -20,10 +20,11 @@ class PortIntro extends React.Component {
         {
           this.props.linkSrc &&
           <section className="repo-section">
-            <p className="intro-link">
+            <p className="repo-links">
               Github repo: <a href={this.props.linkSrc}>Source Code</a>
-              {this.props.liveLink && <a href={this.props.liveLink}> View Site</a>}
             </p>
+            {this.props.liveLink && <p className="repo-links">Demo: <a href={this.props.liveLink}> View Site</a></p>}
+
             <img src={this.props.repoImg} alt=""/>
           </section>
         }
