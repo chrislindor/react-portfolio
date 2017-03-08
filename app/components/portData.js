@@ -78,7 +78,7 @@ const portData = [
     thumbImg: `${imgPath}cl/cl-thumb.png`,
     category: 'Development',
     intro: {
-      text:" A collection of small jQuery apps and games developed while taking a frontend web development course at General Assembly.  Projects included: Instagram photo lookup tool, Cash register, temperature converter,  and to do list. Games developed: hi low and rock paper scissors. ",
+      text:" After learning react I wanted a project that I could use to test what I have learned. I decided to embark on redesigning and developing my wordpress portfolio site while learning to use react. Using ES6 classes I created an app that takes information stored in objects to render pages based on the parameter passed to the route. All of the portfolio display pages share one component that changes based on the parameter passed to the “work/:portitemname”.  I will continue to refactor and update this website in the future.",
       img: `${imgPath}cl/cl-intro.png`
     },
     repo: {
@@ -86,12 +86,6 @@ const portData = [
       demo: "http://chrislindor.com",
       img: `${imgPath}cl/cl-site-pic.png`
     }
-  },
-  {
-    title: "test5",
-    url: "test5",
-    thumbImg: "./assets/images/test-back.png",
-    category: 'Design'
   }
 ];
 

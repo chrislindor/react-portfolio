@@ -4,7 +4,6 @@ import portData from './portData';
 import ProjectLink from './ProjectLink'
 
 // Work component
-
 // function to filter array and return array of data based on supplied category argument.
 // let filterData = (array, filter) => {
 //   let newArray = [];
