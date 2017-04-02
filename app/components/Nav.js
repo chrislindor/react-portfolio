@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 let Bars = <i className="fa fa-bars" aria-hidden="true"></i>;
 
@@ -73,7 +74,15 @@ class Nav extends React.Component {
 
         </nav>
 
-        {this.props.children}
+        <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnter={false}
+          transitionLeave={false}>
+          {this.props.children}
+        </ReactCSSTransitionGroup>
+
 
         <footer>
           <p className="contact-info">
