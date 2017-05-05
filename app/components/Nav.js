@@ -27,7 +27,7 @@ class Nav extends React.Component {
         buttonStyle: CloseIcon,
         navVis: "nav-links light-style" ,
         logoStyle: "logo logo-hidden",
-        buttonColor: "nav-open light-style"
+        buttonColor: "nav-open "
       })
     } else {
       this.setState({

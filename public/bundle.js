@@ -26557,22 +26557,87 @@
 	            _react2.default.createElement(
 	              'p',
 	              null,
-	              'Hello! I\u2019m Christopher Lindor a Designer, Web Developer and Photographer with over 6 years of exprience. I started out editing pictures in photoshop and myspace profile templates in highschool, which fueled my love for the web. I became intersted in photography as another creative outlet and now I never leave home with out a camera.'
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              'See my ',
+	              'Hello! I\u2019m Christopher Lindor a developer and designer who loves photography. I build and design responsive web applications and websites. ',
 	              _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: '/work' },
-	                ' work '
-	              ),
-	              ' or check out some of my ',
+	                'See My work'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'section',
+	              { className: 'skill-section' },
 	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/photo' },
-	                'photography'
+	                'p',
+	                null,
+	                'Things I\'m great at'
+	              ),
+	              _react2.default.createElement(
+	                'ul',
+	                { className: 'skills-list' },
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Frontend Web Development'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'UI & UX Design'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'section',
+	              { className: 'skill-section' },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Things I use to get the job done:'
+	              ),
+	              _react2.default.createElement(
+	                'ul',
+	                { className: 'skills-list' },
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'HTML5 & CSS3'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'JavaScript ES6'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'SASS'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'React JS'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Webpack'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Gulp'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Bootstrap'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Git'
+	                )
 	              )
 	            )
 	          )
@@ -26650,7 +26715,7 @@
 	          buttonStyle: CloseIcon,
 	          navVis: "nav-links light-style",
 	          logoStyle: "logo logo-hidden",
-	          buttonColor: "nav-open light-style"
+	          buttonColor: "nav-open "
 	        });
 	      } else {
 	        this.setState({
@@ -28122,21 +28187,6 @@
 	  key: 1,
 	  tittle: "gallery1",
 	  images: [imgPath + "photo-back-4.png", imgPath + "photo-back-3.jpg", imgPath + "photo-back-2.png"],
-	  style: 'gallery'
-	}, {
-	  key: 2,
-	  tittle: "gallery2",
-	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
-	  style: 'gallery'
-	}, {
-	  key: 3,
-	  tittle: "gallery3",
-	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
-	  style: 'gallery'
-	}, {
-	  key: 4,
-	  tittle: "gallery4",
-	  images: ["./assets/images/test-back.png", "./assets/images/test-back.png", "./assets/images/test-back.png"],
 	  style: 'gallery'
 	}];
 

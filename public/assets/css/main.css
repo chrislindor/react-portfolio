@@ -53,6 +53,10 @@ header {
   cursor: pointer;
 }
 
+.logo a:hover {
+  color: rgb(150, 150, 150);
+}
+
 .logo-hidden {
   visibility: hidden;
 }
@@ -70,9 +74,18 @@ header .main-nav-button {
   cursor: pointer;
 }
 
+header .main-nav-button:hover {
+  background-color: transparent;
+  color: rgb(150, 150, 150);
+}
+
 .light-style a,
 .light-style {
   color: rgb(255, 255, 255);
+}
+
+.light-style a:hover {
+  color: rgb(150, 150, 150);
 }
 
 /******************************************
@@ -153,8 +166,7 @@ Home page styles
 **********************************************/
 
 
-.home-display,
-.about {
+.home-display {
   width: 100vw;
   height: 84vh;
   display: flex;
@@ -162,6 +174,16 @@ Home page styles
   /*justify-content: center;*/
   align-items: center;
   /*padding: 10vh 0 0 0;*/
+}
+
+.about {
+  /*width: 100vw;
+  min-height: 84vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0 0 0;*/
 }
 
 .home-img {
@@ -207,6 +229,13 @@ padding-left: 5vw;
   background-color: transparent;
   padding: 0 0 10px 0;
   cursor: pointer;
+  transform: scale(1);
+  transition: transform .20s ease-in;
+}
+
+.home-bttn:hover {
+  transform: scale(1.04);
+  transition: transform .20s ease-in;
 }
 
 
@@ -227,6 +256,10 @@ padding-left: 5vw;
 }
 .home-bttn-active-design {
   color:  rgba(0, 85, 164, 1);
+  cursor: default;
+}
+.home-bttn-active-design:hover {
+  transform: scale(1);
 }
 
 .home-dev {
@@ -240,8 +273,11 @@ padding-left: 5vw;
 }
 .home-bttn-active-dev {
   color: rgba(228, 87, 73, 1);
+  cursor: default;
 }
-
+.home-bttn-active-dev:hover {
+  transform: scale(1);
+}
 .home-photo {
   background-image: url('../images/photo-back-4.png');
   background-position: center;
@@ -250,8 +286,11 @@ padding-left: 5vw;
 }
 .home-bttn-active-photo {
   color: rgba(255, 255, 255, 1);
+  cursor: default;
 }
-
+.home-bttn-active-photo:hover {
+  transform: scale(1);
+}
 
 .home-inner {
   width: 80vw;
@@ -261,14 +300,33 @@ padding-left: 5vw;
 
 .about {
   display: flex;
+  min-height: 84vh;
   justify-content: center;
   align-items: center;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
+  padding: 15vh 0 5vh 0;
+}
+
+.skills-list {
+  display: flex;
+  list-style: none;
+  flex-flow: row wrap;
+  font-family: "proxima-nova",sans-serif;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 5px 15px ;
+  border-radius: 4px;
+  margin: 5px;
 }
 
 .home-inner p {
-  font-size: 1em;
+  font-size: 1.2em;
+  line-height: 170%;
   font-family: "proxima-nova",sans-serif;
   /*letter-spacing: 1px;*/
 }
@@ -276,6 +334,13 @@ padding-left: 5vw;
 .home-inner  p a {
   color: rgb(0, 0, 0);
   font-weight: 700;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding-bottom: 3px;
+}
+
+.home-inner p a:hover {
+  color: rgb(150, 150, 150);
+  border-bottom: 2px solid rgb(150, 150, 150);
 }
 
 
@@ -322,6 +387,14 @@ Work  styles
 .filter-bttn-active {
   border-bottom: 3px solid rgb(0, 0, 0);
 }
+.filter-bttn-active:hover {
+  border-bottom: 3px solid rgb(150, 150, 150);
+}
+
+.filter-bttn:hover {
+  color: rgb(150, 150, 150);
+}
+
 .filter-span {
 }
 
@@ -352,6 +425,11 @@ figure {
 .project-title {
   color: rgb(0, 0, 0);
 }
+
+.project-title:hover {
+  color: rgb(150, 150, 150);
+}
+
 .proj-h2 {
   margin-bottom: 10px;
 }
@@ -551,7 +629,13 @@ Gallery Styles
 .gall-head a {
   color: rgb(0, 0, 0);
   font-weight: 700;
-  text-decoration: underline;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding-bottom: 3px;
+}
+
+.gall-head a:hover {
+  color: rgb(150, 150, 150);
+  border-bottom: 2px solid rgb(150, 150, 150);
 }
 
 .gall-container {
@@ -584,6 +668,10 @@ footer p {
 footer p a {
   padding: 0 5px;
   color: rgb(0, 0, 0);
+}
+
+footer p a:hover {
+  color: rgb(150, 150, 150);
 }
 
 footer .social-icons {

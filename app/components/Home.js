@@ -83,11 +83,31 @@ class Home extends React.Component {
           <section className="home-inner">
             <h1>About Me</h1>
             <p>
-              Hello! I’m Christopher Lindor a Designer, Web Developer and Photographer with over 6 years of experience. I started out editing pictures in photoshop and myspace profile templates in highschool, which fueled my love for the web. I became interested in photography as another creative outlet and now I never leave home without a camera.
+              Hello! I’m Christopher Lindor a developer and designer who loves photography. I build and design responsive web applications and websites. <Link to="/work">See My work</Link>
             </p>
-            <p>
-              See my <Link to="/work"> work </Link> or check out some of my <Link to="/photo">photography</Link>
-            </p>
+
+
+            <section className='skill-section'>
+              <p>Things I'm great at</p>
+              <ul className='skills-list'>
+                <li>Frontend Web Development</li>
+                <li>UI &amp; UX Design</li>
+              </ul>
+            </section>
+            <section className="skill-section">
+              <p>Things I use to get the job done:</p>
+              <ul className='skills-list'>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript ES6</li>
+                <li>SASS</li>
+                <li>React JS</li>
+                <li>Webpack</li>
+                <li>Gulp</li>
+                <li>Bootstrap</li>
+                <li>Git</li>
+              </ul>
+            </section>
+
           </section>
         </section>
 
