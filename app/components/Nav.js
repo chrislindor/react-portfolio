@@ -16,7 +16,7 @@ class Nav extends React.Component {
     this.navClick = this.navClick.bind(this)
     this.state = {
       buttonStyle: Bars,
-      navVis: "nav-links nav-hidden",
+      navVis: "nav-hidden",
       logoStyle: "logo",
       buttonColor: "nav-open"
     }
@@ -25,15 +25,15 @@ class Nav extends React.Component {
     if (this.state.buttonStyle === Bars ) {
       this.setState({
         buttonStyle: CloseIcon,
-        navVis: "nav-links light-style" ,
-        logoStyle: "logo logo-hidden",
+        navVis: "light-style" ,
+        logoStyle: "logo-hidden",
         buttonColor: "nav-open "
       })
     } else {
       this.setState({
         buttonStyle: Bars,
-        navVis: "nav-links nav-hidden",
-        logoStyle: "logo",
+        navVis: "nav-hidden",
+        logoStyle: "",
         buttonColor: "nav-open"
       })
     }
@@ -43,14 +43,14 @@ class Nav extends React.Component {
     return (
       <div className="site-root">
         <header>
-          <section className={this.state.logoStyle}>
+          <section className={`logo ${this.state.logoStyle}`}>
             <Link to="/">Christopher Lindor</Link>
           </section>
-          <div className={` main-nav-button ${this.state.buttonColor} `}onClick={this.navClick}>
+          <div className={` main-nav-button ${this.state.buttonColor} `} onClick={this.navClick}>
             {this.state.buttonStyle}
           </div>
         </header>
-        <nav className={this.state.navVis}>
+        <nav className={`nav-links ${this.state.navVis}`}>
             <ul>
               <li>
                 <Link to="/" onClick={this.navClick}>C.L.</Link>

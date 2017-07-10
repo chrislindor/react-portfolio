@@ -40,7 +40,6 @@ class Home extends React.Component {
   }
 
   homeClick() {
-    this.stripState();
     if (this.state.creativeType = 'home-design') {
       this.updateCreative("home-dev", "devBttn", "dev");
     } else if (this.state.creativeType = 'home-dev') {
